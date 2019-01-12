@@ -94,6 +94,10 @@ template<typename Head>
 struct checkImpl<1, Head, Head> {
 };
 
+template<typename Head>
+struct checkImpl<2, Head, Head> {
+};
+
 template<size_t cnt, typename Head, typename... Tail>
 struct checkImpl<cnt, Head, Head, Tail...> {
     static void check(const tuple<Head, Tail...> &t) {
